@@ -1,240 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swadist Namkeen - Authentic Flavors</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-    /* Simple modal styling */
-    .message-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      z-index: 100;
-      text-align: center;
-      display: none; /* Initially hidden */
-    }
-    .message-modal p {
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudh Swadh - The Authentic Taste of Namkeen</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3e9; /* Light, warm background */
+        }
+    </style>
 </head>
-<body class="bg-stone-50 text-stone-800">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Header Section -->
-  <header class="bg-white shadow-md py-4 px-6 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="text-3xl font-extrabold text-amber-700">SWADIST</div>
-      <nav class="hidden md:flex space-x-8 text-stone-600 font-medium">
-        <a href="#products" class="hover:text-amber-700 transition duration-300">Products</a>
-        <a href="#about" class="hover:text-amber-700 transition duration-300">About</a>
-        <a href="#contact" class="hover:text-amber-700 transition duration-300">Contact</a>
-      </nav>
-      <a href="#products" class="bg-amber-700 text-white px-5 py-2 rounded-full font-bold shadow-lg hover:bg-amber-800 transition duration-300">
-        Shop Now
-      </a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative bg-amber-100 py-24 md:py-32 px-4 text-center overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/FFF3E0/E0D2C7?text=Background+Texture')] opacity-5"></div>
-    <div class="container mx-auto relative z-10">
-      <h1 class="text-5xl md:text-7xl font-bold text-stone-900 mb-4 animate-fadeInUp">
-        Har Bite Mein Swad
-      </h1>
-      <p class="text-lg md:text-xl text-stone-700 mb-8 max-w-2xl mx-auto">
-        Experience the authentic crunch and spicy flavor of our hand-crafted namkeen.
-      </p>
-      <img
-        src="https://placehold.co/600x400/D4B483/574230?text=Your+Product+Image+Here"
-        alt="Swadist Channa Namkeen"
-        class="rounded-3xl shadow-2xl mx-auto w-full max-w-sm md:max-w-md lg:max-w-lg mb-12 transform hover:scale-105 transition duration-500"
-      >
-      <a href="#products" class="inline-block bg-amber-700 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-xl hover:bg-amber-800 transition duration-300 transform hover:scale-105">
-        Browse Products
-      </a>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="py-20 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center text-amber-700 mb-12">
-        Our Delicious Range
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <!-- Product Card 1 -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-t-4 border-amber-700 hover:shadow-2xl transition duration-500">
-          <img
-            src="https://placehold.co/400x300/D4B483/574230?text=Channa+Namkeen"
-            alt="Channa Namkeen"
-            class="w-full h-auto rounded-lg mb-6"
-          >
-          <h3 class="text-2xl font-semibold text-stone-800 mb-2">Channa Namkeen</h3>
-          <p class="text-xl font-medium text-stone-600 mb-6">
-            Crunchy • Spicy • Delicious
-          </p>
-          <div class="flex flex-col space-y-4">
-            <button
-              class="razorpay-btn bg-amber-700 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-800 transition duration-300"
-              data-product="Channa Namkeen 100g"
-              data-price="7000"
-            >
-              Buy 100g - ₹70
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto p-4 flex justify-between items-center max-w-7xl">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/7e3a00/ffffff?text=SS" alt="Logo" class="rounded-full">
+                <span class="text-xl font-bold text-[#7e3a00]">Sudh Swadh</span>
+            </a>
+            <!-- Mobile Menu Toggler (hidden on desktop) -->
+            <button id="menu-btn" class="text-gray-600 focus:outline-none md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
             </button>
-            <button
-              class="razorpay-btn bg-amber-700 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-800 transition duration-300"
-              data-product="Channa Namkeen 200g"
-              data-price="12000"
-            >
-              Buy 200g - ₹120
-            </button>
-          </div>
+            <!-- Desktop Navigation Links (hidden on mobile) -->
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#products" class="text-gray-600 hover:text-[#7e3a00] transition-colors">Products</a>
+                <a href="#about" class="text-gray-600 hover:text-[#7e3a00] transition-colors">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-[#7e3a00] transition-colors">Contact</a>
+            </nav>
         </div>
-        <!-- Product Card 2 (Placeholder) -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-t-4 border-amber-700 hover:shadow-2xl transition duration-500">
-          <img
-            src="https://placehold.co/400x300/D4B483/574230?text=New+Product"
-            alt="New Product"
-            class="w-full h-auto rounded-lg mb-6"
-          >
-          <h3 class="text-2xl font-semibold text-stone-800 mb-2">Coming Soon!</h3>
-          <p class="text-xl font-medium text-stone-600 mb-6">
-            We are working on new exciting flavors just for you.
-          </p>
-          <a href="#contact" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300">
-            Get Updates
-          </a>
+        <!-- Mobile Menu (initially hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#products" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Products</a>
+            <a href="#about" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">About Us</a>
+            <a href="#contact" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Contact</a>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- About Section -->
-  <section id="about" class="bg-white py-20 px-4">
-    <div class="container mx-auto max-w-3xl text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-amber-700 mb-6">
-        Our Story
-      </h2>
-      <p class="text-lg text-stone-700 leading-relaxed mb-4">
-        At Swadist, we are dedicated to crafting the finest namkeen using time-honored recipes and the freshest ingredients. Our mission is to share a taste of tradition and pure flavor with every packet. From our kitchen to your hands, we guarantee a snack made with care, passion, and a touch of magic.
-      </p>
-    </div>
-  </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-[#7e3a00] text-white py-12 px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">Authentic Taste. Handmade with Love.</h1>
+                <p class="mt-4 text-lg max-w-2xl mx-auto">Experience the rich flavors and traditional recipes of our homemade namkeen. Perfect for any occasion.</p>
+                <a href="#products" class="mt-8 inline-block bg-white text-[#7e3a00] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-colors transform hover:scale-105">View Products</a>
+            </div>
+        </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-stone-100 px-4">
-    <div class="container mx-auto max-w-xl text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-amber-700 mb-6">
-        Let's Connect
-      </h2>
-      <p class="text-lg text-stone-700 mb-8">
-        We'd love to hear from you! Reach out to us for orders, questions, or just to say hello.
-      </p>
-      <div class="flex flex-col items-center space-y-4">
-        <a href="mailto:shubhamk0811@gmail.com" class="flex items-center space-x-3 text-lg md:text-xl text-stone-800 font-semibold hover:text-amber-700 transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-700" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-          <span class="pl-2">shubhamk0811@gmail.com</span>
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- Products Section -->
+        <section id="products" class="py-16 px-4">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-[#7e3a00]">Our Delicious Namkeen</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Product Card 1: 200g Pack -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/ffe4b5/7e3a00?text=200g+Pack" alt="200g Namkeen Pack" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2">Bhujiya Namkeen (200g Pack)</h3>
+                            <p class="text-gray-600 text-sm mb-4">A classic crispy and spicy snack, perfect for sharing.</p>
+                            <span class="text-2xl font-bold text-gray-900">₹120</span>
+                            <a href="https://rzp.io/rzp/X8AcsLGu" target="_blank" class="mt-4 inline-block w-full bg-[#7e3a00] text-white py-3 px-6 rounded-full hover:bg-[#5a2a00] transition-colors">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Product Card 2: 100g Pack -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/d3d3d3/7e3a00?text=100g+Pack" alt="100g Namkeen Pack" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2">Bhujiya Namkeen (100g Pack)</h3>
+                            <p class="text-gray-600 text-sm mb-4">A smaller pack for a quick and delicious treat.</p>
+                            <span class="text-2xl font-bold text-gray-900">₹70</span>
+                            <a href="https://rzp.io/rzp/gi0abJN7" target="_blank" class="mt-4 inline-block w-full bg-[#7e3a00] text-white py-3 px-6 rounded-full hover:bg-[#5a2a00] transition-colors">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Footer -->
-  <footer class="bg-stone-900 text-white py-6 text-center">
-    <p class="text-sm">
-      &copy; 2025 Swadist Namkeen. All rights reserved.
-    </p>
-  </footer>
+        <!-- About Us Section -->
+        <section id="about" class="bg-white py-16 px-4">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-3xl font-bold mb-6 text-[#7e3a00]">Our Story</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    At **Sudh Swadh**, we believe in the power of tradition and pure ingredients. Our namkeen is crafted with care, using time-tested recipes passed down through generations. We use only the finest quality spices and oil to ensure every bite is a burst of authentic flavor. Our passion is to bring the taste of homemade goodness directly to you.
+                </p>
+            </div>
+        </section>
 
-  <!-- Message Modal -->
-  <div id="message-modal" class="message-modal hidden">
-    <p id="modal-text" class="text-lg font-semibold"></p>
-    <button id="modal-close" class="mt-4 px-6 py-2 bg-amber-700 text-white rounded-full hover:bg-amber-800">Close</button>
-  </div>
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 text-center">
+            <div class="container mx-auto max-w-xl">
+                <h2 class="text-3xl font-bold mb-6 text-[#7e3a00]">Contact Us</h2>
+                <p class="text-gray-600 text-lg mb-8">
+                    Have a question or a special order? We're here to help!
+                </p>
+                <div class="space-y-4">
+                    <!-- Call Button -->
+                    <a href="tel:+919717757912" class="inline-block w-full sm:w-auto bg-[#7e3a00] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#5a2a00] transition-colors">
+                        Call Us: +91 9717757912
+                    </a>
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/919717757912" class="inline-block w-full sm:w-auto bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-colors">
+                        WhatsApp: +91 9717757912
+                    </a>
+                    <!-- Email Button -->
+                    <a href="mailto:Sudhswadh1977@gmail.com" class="inline-block w-full sm:w-auto bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-colors">
+                        Email Us: Sudhswadh1977@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- Include the Razorpay SDK -->
-  <script src="https://rzp.io/rzp/5OJCd7z"></script>
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-12 px-4 text-center">
+        <div class="container mx-auto max-w-7xl">
+            <h3 class="text-2xl font-bold mb-4">Sudh Swadh</h3>
+            <p class="text-gray-400">Authentic Namkeen. Traditional Recipes.</p>
+            <div class="mt-6 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8">
+                <a href="tel:+919717757912" class="text-gray-300 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.186.44l-1.417 1.954a1.125 1.125 0 01-1.54 0l-3.297-4.121a1.125 1.125 0 010-1.54l1.954-1.417c.385-.284.55-.746.44-1.186L13.5 7.427a1.125 1.125 0 00-1.091-.852H11.25A2.25 2.25 0 009 7.5v2.25m.945-8.877l.006.002.002.002.003.001.001.001.001.001.001.001.002.001a.75.75 0 10-.001-1.498.75.75 0 00-.002.001h-.001c-.001-.001-.001-.002-.002-.002-.001 0-.002-.001-.003-.001h-.002a.75.75 0 10-.001-1.498.75.75 0 00-.002.001h-.001a.75.75 0 10-.001-1.498.75.75 0 00-.002.001zM12.5 7.5a.5.5 0 11-1 0 .5.5 0 011 0z" />
+                    </svg>
+                    +91 9717757912
+                </a>
+                <a href="mailto:Sudhswadh1977@gmail.com" class="text-gray-300 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                    Sudhswadh1977@gmail.com
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">© 2024 Sudh Swadh. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <!-- Custom JavaScript for Razorpay Integration -->
-  <script>
-    // Get all buttons with the class 'razorpay-btn'
-    const razorpayButtons = document.querySelectorAll('.razorpay-btn');
-    const messageModal = document.getElementById('message-modal');
-    const modalText = document.getElementById('modal-text');
-    const modalCloseBtn = document.getElementById('modal-close');
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    // Function to show the modal with a message
-    function showModal(message) {
-      modalText.textContent = message;
-      messageModal.style.display = 'block';
-    }
-
-    // Function to hide the modal
-    function hideModal() {
-      messageModal.style.display = 'none';
-    }
-
-    // Close modal on button click
-    modalCloseBtn.addEventListener('click', hideModal);
-
-    // Loop through each button and add a click event listener
-    razorpayButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Get product details from the data attributes
-        const productName = button.getAttribute('data-product');
-        const productPrice = parseInt(button.getAttribute('data-price'), 10);
-
-        // Razorpay options
-        const options = {
-          // IMPORTANT: Replace this with your actual Razorpay Key ID
-          key: "rzp_test_e3H6e1t9e2", // Use your Razorpay key
-          amount: productPrice,
-          currency: "INR",
-          name: "Swadist Namkeen",
-          description: productName,
-          image: "https://placehold.co/100x100/D4B483/574230?text=Logo",
-          handler: function (response) {
-            // This function is executed after a successful payment
-            const paymentId = response.razorpay_payment_id;
-            // You can send this payment ID to your backend to verify the payment
-            showModal("Payment successful! Thank you for your order. Payment ID: " + paymentId);
-          },
-          prefill: {
-            name: "Customer Name", // Replace with customer's name if you have it
-            email: "customer@example.com", // Replace with customer's email if you have it
-            contact: "9999999999" // Replace with customer's phone if you have it
-          },
-          notes: {
-            "address": "Customer Address"
-          },
-          theme: {
-            "color": "#9b6d31"
-          }
-        };
-
-        // Create and open the Razorpay checkout
-        const rzp1 = new Razorpay(options);
-        rzp1.open();
-      });
-    });
-  </script>
+        // Mobile menu toggle logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
