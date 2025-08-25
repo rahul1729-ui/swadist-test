@@ -60,9 +60,15 @@
             <div class="container mx-auto max-w-7xl">
                 <h2 class="text-3xl font-bold text-center mb-12 text-[#7e3a00]">Our Delicious Namkeen</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Product Card 1: 100g Pack -->
+                    <!-- Product Card 1: 100g Pack with Image Slider -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="channa.png" alt="100g Channa Namkeen Pack" class="w-full h-64 object-cover">
+                        <!-- Image Slider Container -->
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <div id="slider-100g" class="flex transition-transform duration-500 ease-in-out h-full">
+                                <img src="channa.png" alt="100g Channa Namkeen Pack" class="w-full h-full object-cover flex-shrink-0">
+                                <img src="channa2.png" alt="100g Channa Namkeen Pack Alternate" class="w-full h-full object-cover flex-shrink-0">
+                            </div>
+                        </div>
                         <div class="p-6 text-center">
                             <h3 class="text-xl font-semibold mb-2">Swadist Channa Namkeen-(100g Pack)</h3>
                             <p class="text-gray-600 text-sm mb-4">A smaller pack for a quick and delicious treat.</p>
@@ -72,9 +78,15 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Product Card 2: 200g Pack -->
+                    <!-- Product Card 2: 200g Pack with Image Slider -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="channa.png" alt="200g Channa Namkeen Pack" class="w-full h-64 object-cover">
+                        <!-- Image Slider Container -->
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <div id="slider-200g" class="flex transition-transform duration-500 ease-in-out h-full">
+                                <img src="channa.png" alt="200g Channa Namkeen Pack" class="w-full h-full object-cover flex-shrink-0">
+                                <img src="channa2.png" alt="200g Channa Namkeen Pack Alternate" class="w-full h-full object-cover flex-shrink-0">
+                            </div>
+                        </div>
                         <div class="p-6 text-center">
                             <h3 class="text-xl font-semibold mb-2">Swadist Channa Namkeen-(200g Pack)</h3>
                             <p class="text-gray-600 text-sm mb-4">A classic crispy and spicy snack, perfect for sharing.</p>
@@ -163,7 +175,24 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    </script>
+        
+        // Image slider logic
+        function setupSlider(sliderId, interval) {
+            const slider = document.getElementById(sliderId);
+            const images = slider.children;
+            let currentIndex = 0;
 
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }, interval);
+        }
+
+        // Initialize sliders on page load
+        window.onload = function() {
+            setupSlider('slider-100g', 3000); // 3 seconds interval for the 100g pack
+            setupSlider('slider-200g', 3000); // 3 seconds interval for the 200g pack
+        };
+    </script>
 </body>
 </html>
